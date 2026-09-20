@@ -1,0 +1,1877 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+
+    overflow: hidden;
+
+    background: #000;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   UNIVERSO
+========================= */
+
+.universo {
+
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(255, 193, 7, .18),
+            transparent 18%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(255, 215, 0, .07),
+            transparent 45%
+        ),
+
+        #000;
+
+    perspective: 1000px;
+
+    transition: transform .2s ease;
+}
+
+
+/* =========================
+   ESTRELLAS
+========================= */
+
+#estrellas {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.estrella-fondo {
+
+    position: absolute;
+
+    width: 2px;
+    height: 2px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    animation:
+        parpadear 2s infinite alternate;
+
+}
+
+@keyframes parpadear {
+
+    from {
+        opacity: .2;
+        transform: scale(.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.7);
+    }
+
+}
+
+
+/* =========================
+   TITULO
+========================= */
+
+.titulo {
+
+    position: absolute;
+
+    top: 5%;
+
+    width: 100%;
+
+    text-align: center;
+
+    z-index: 20;
+
+}
+
+.titulo span {
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    color: #aaa;
+
+}
+
+.titulo h1 {
+
+    margin-top: 8px;
+
+    color: #ffd21c;
+
+    font-size: 34px;
+
+    text-shadow:
+        0 0 10px #ffd21c,
+        0 0 30px #ff9800;
+
+}
+
+
+/* =========================
+   CENTRO
+========================= */
+
+.centro {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: 300px;
+
+    text-align: center;
+
+    z-index: 15;
+
+}
+
+.flor-central {
+
+    font-size: 115px;
+
+    filter:
+        drop-shadow(0 0 10px #ffd21c)
+        drop-shadow(0 0 35px #ff9800);
+
+    animation:
+
+        girar 12s linear infinite,
+        flotar 3s ease-in-out infinite;
+
+}
+
+@keyframes girar {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes flotar {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+.centro h2 {
+
+    font-size: 38px;
+
+    color: #ffd21c;
+
+    text-shadow:
+        0 0 10px #ffd21c;
+
+}
+
+.centro p {
+
+    margin-top: 5px;
+
+    color: #bbb;
+
+}
+
+.estrella-nombre {
+
+    margin: 10px 0 20px;
+
+    color: #fff;
+
+    letter-spacing: 3px;
+
+}
+
+
+/* =========================
+   BOTON
+========================= */
+
+button {
+
+    border: none;
+
+    padding: 13px 22px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            45deg,
+            #ffb300,
+            #ffe600
+        );
+
+    color: #241500;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(255,193,7,.6);
+
+    transition: .3s;
+
+}
+
+button:hover {
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 30px #ffd21c;
+
+}
+
+
+/* =========================
+   ORBITAS
+========================= */
+
+.orbita {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    border: 1px solid rgba(255, 215, 0, .15);
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+
+}
+
+.orbita1 {
+
+    width: 380px;
+    height: 200px;
+
+    animation:
+        orbitar1 9s linear infinite;
+
+}
+
+.orbita2 {
+
+    width: 520px;
+    height: 280px;
+
+    animation:
+        orbitar2 14s linear infinite;
+
+}
+
+.orbita3 {
+
+    width: 680px;
+    height: 360px;
+
+    animation:
+        orbitar3 20s linear infinite;
+
+}
+
+
+.objeto {
+
+    position: absolute;
+
+    top: -25px;
+
+    left: 50%;
+
+    font-size: 45px;
+
+    filter:
+        drop-shadow(0 0 8px #ffd21c);
+
+}
+
+
+/* Diferentes direcciones */
+
+@keyframes orbitar1 {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
+
+@keyframes orbitar2 {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+}
+
+@keyframes orbitar3 {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   FRASES
+========================= */
+
+.frase {
+
+    position: absolute;
+
+    z-index: 8;
+
+    color: #eee;
+
+    font-size: 15px;
+
+    text-shadow:
+        0 0 8px #ffd21c;
+
+    animation:
+        moverFrase 5s ease-in-out infinite;
+
+}
+
+.frase1 {
+    top: 25%;
+    left: 8%;
+}
+
+.frase2 {
+    top: 30%;
+    right: 8%;
+}
+
+.frase3 {
+    bottom: 25%;
+    left: 8%;
+}
+
+.frase4 {
+    bottom: 18%;
+    right: 8%;
+}
+
+.frase5 {
+    top: 15%;
+    left: 47%;
+}
+
+@keyframes moverFrase {
+
+    0%, 100% {
+        transform: translateY(0);
+        opacity: .5;
+    }
+
+    50% {
+        transform: translateY(-15px);
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================
+   GUSTOS
+========================= */
+
+.gusto {
+
+    position: absolute;
+
+    z-index: 10;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    font-size: 30px;
+
+    filter:
+        drop-shadow(0 0 6px rgba(255,193,7,.5));
+
+    animation:
+        gustoFlota 4s ease-in-out infinite;
+
+}
+
+.gusto span {
+
+    font-size: 10px;
+
+    color: #bbb;
+
+    margin-top: 4px;
+
+}
+
+.gusto1 {
+    top: 38%;
+    left: 18%;
+}
+
+.gusto2 {
+    top: 60%;
+    left: 10%;
+}
+
+.gusto3 {
+    top: 42%;
+    right: 15%;
+}
+
+.gusto4 {
+    bottom: 18%;
+    right: 20%;
+}
+
+.gusto5 {
+    top: 18%;
+    right: 30%;
+}
+
+@keyframes gustoFlota {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+
+}
+
+
+/* =========================
+   SORPRESA
+========================= */
+
+#sorpresa {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(0,0,0,.85);
+
+    backdrop-filter: blur(8px);
+
+    z-index: 100;
+
+}
+
+.carta {
+
+    position: relative;
+
+    width: 90%;
+
+    max-width: 450px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+        radial-gradient(
+            circle,
+            #302600,
+            #080808 70%
+        );
+
+    border: 1px solid #ffd21c;
+
+    box-shadow:
+        0 0 30px #ffd21c,
+        0 0 100px rgba(255,174,0,.3);
+
+    animation:
+        aparecer .5s ease;
+
+}
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(.5)
+            rotate(-5deg);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0);
+
+    }
+
+}
+
+.cerrar {
+
+    position: absolute;
+
+    right: 15px;
+    top: 10px;
+
+    background: transparent;
+
+    color: #ffd21c;
+
+    font-size: 30px;
+
+    padding: 0;
+
+    box-shadow: none;
+
+}
+
+.flor-final {
+
+    font-size: 85px;
+
+    filter:
+        drop-shadow(0 0 15px #ffd21c);
+
+}
+
+.carta h2 {
+
+    color: #ffd21c;
+
+    margin: 10px;
+
+}
+
+.carta p {
+
+    color: #eee;
+
+    line-height: 1.6;
+
+    margin: 12px 0;
+
+}
+
+.gustos-finales {
+
+    font-size: 30px;
+
+    margin: 15px;
+
+}
+
+.amistad {
+
+    color: #ffd21c !important;
+
+    font-weight: bold;
+
+}
+
+
+ 
+
+.petalo {
+
+    position: fixed;
+
+    top: -30px;
+
+    z-index: 200;
+
+    pointer-events: none;
+
+    animation:
+        caer linear forwards;
+
+}
+
+@keyframes caer {
+
+    to {
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+@media(max-width: 600px) {
+
+    .titulo h1 {
+
+        font-size: 27px;
+
+    }
+
+    .titulo span {
+
+        font-size: 8px;
+
+    }
+
+    .centro {
+
+        width: 270px;
+
+    }
+
+    .flor-central {
+
+        font-size: 85px;
+
+    }
+
+    .centro h2 {
+
+        font-size: 30px;
+
+    }
+
+    .orbita1 {
+
+        width: 300px;
+        height: 170px;
+
+    }
+
+    .orbita2 {
+
+        width: 390px;
+        height: 230px;
+
+    }
+
+    .orbita3 {
+
+        width: 500px;
+        height: 290px;
+
+    }
+
+    .frase {
+
+        font-size: 11px;
+
+    }
+
+    .gusto {
+
+        font-size: 23px;
+
+    }
+
+    .gusto span {
+
+        font-size: 8px;
+
+    }
+
+}
+/* =========================
+   UNIVERSO PROFUNDO
+========================= */
+
+#universo-profundo {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+}
+
+
+/* Partículas del espacio */
+
+.particula {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 6px white,
+        0 0 12px rgba(255, 215, 0, .5);
+
+    animation:
+        viajarEspacio linear infinite;
+
+}
+
+
+/* Movimiento de las partículas */
+
+@keyframes viajarEspacio {
+
+    0% {
+
+        transform:
+            translate3d(0, 0, -500px)
+            scale(.2);
+
+        opacity: 0;
+
+    }
+
+    30% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+            translate3d(
+                var(--mov-x),
+                var(--mov-y),
+                500px
+            )
+            scale(2);
+
+        opacity: 0;
+
+    }
+
+}
+/* =========================
+   ESTRELLAS DE MENSAJES
+========================= */
+
+.mensaje-secreto {
+
+    position: absolute;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    color: #fff;
+
+    font-size: 30px;
+
+    z-index: 40;
+
+    /* Brillo dorado */
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 12px #ffd21c,
+        0 0 25px #ff9800,
+        0 0 45px #ffd21c;
+
+    animation:
+        estrellaSecreta 2s ease-in-out infinite;
+
+}
+
+
+/* Aro de luz alrededor */
+
+.mensaje-secreto::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    border: 2px solid #ffd21c;
+
+    box-shadow:
+        0 0 10px #ffd21c,
+        0 0 25px #ff9800;
+
+    animation:
+        pulsoSecreto 1.5s ease-in-out infinite;
+
+}
+
+
+/* Indicador de mensaje */
+
+.mensaje-secreto::after {
+
+    content: "💬";
+
+    position: absolute;
+
+    top: 30px;
+
+    left: 25px;
+
+    font-size: 13px;
+
+    filter:
+        drop-shadow(0 0 4px #ffd21c);
+
+    animation:
+        indicador 1.5s ease-in-out infinite;
+
+}
+
+
+@keyframes estrellaSecreta {
+
+    0%, 100% {
+
+        transform:
+            scale(1)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.25)
+            rotate(10deg);
+
+    }
+
+}
+
+
+@keyframes pulsoSecreto {
+
+    0%, 100% {
+
+        transform: scale(.8);
+
+        opacity: .4;
+
+    }
+
+    50% {
+
+        transform: scale(1.35);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+@keyframes indicador {
+
+    0%, 100% {
+
+        transform: translateY(0);
+
+        opacity: .5;
+
+    }
+
+    50% {
+
+        transform: translateY(-5px);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* Cuando pasas el mouse */
+
+.mensaje-secreto:hover {
+
+    transform: scale(1.5);
+
+    color: #fff;
+
+    text-shadow:
+        0 0 10px white,
+        0 0 25px #ffd21c,
+        0 0 50px #ff9800;
+
+}
+
+
+/* En celular */
+
+@media(max-width: 600px) {
+
+    .mensaje-secreto {
+
+        width: 48px;
+        height: 48px;
+
+        font-size: 34px;
+
+    }
+
+}
+/* =========================
+   ESTRELLAS SECRETAS
+========================= */
+
+.mensaje-secreto {
+
+    position: absolute;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+
+    font-size: 32px;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    z-index: 999;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 15px #ffd21c,
+        0 0 30px #ff9800;
+
+    animation:
+        secretoBrilla 1.8s infinite;
+
+}
+
+
+@keyframes secretoBrilla {
+
+    0%, 100% {
+
+        transform: scale(1);
+
+        opacity: .7;
+
+    }
+
+    50% {
+
+        transform: scale(1.4);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+.mensaje-secreto::after {
+
+    content: "💬";
+
+    position: absolute;
+
+    right: -8px;
+
+    bottom: -5px;
+
+    font-size: 13px;
+
+}
+
+
+.mensaje-secreto:hover {
+
+    transform: scale(1.7);
+
+}
+
+
+/* =========================
+   VENTANA DEL MENSAJE
+========================= */
+
+.ventana-mensaje-nueva {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(0,0,0,.8);
+
+    backdrop-filter: blur(7px);
+
+    z-index: 10000;
+
+}
+
+
+.contenido-mensaje-nuevo {
+
+    width: 85%;
+
+    max-width: 400px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+        radial-gradient(
+            circle,
+            #302600,
+            #080808 75%
+        );
+
+    border: 2px solid #ffd21c;
+
+    box-shadow:
+        0 0 25px #ffd21c,
+        0 0 70px #ff9800;
+
+    animation:
+        aparecerMensaje .4s ease;
+
+}
+
+
+@keyframes aparecerMensaje {
+
+    from {
+
+        transform: scale(.4);
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        transform: scale(1);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+.icono-nuevo {
+
+    font-size: 60px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.contenido-mensaje-nuevo p {
+
+    color: white;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+
+}
+
+
+.contenido-mensaje-nuevo button {
+
+    cursor: pointer;
+
+}
+/* =========================
+   PLANETA DE CHEE
+========================= */
+
+.planeta-chee {
+
+    position: absolute;
+
+    right: 8%;
+
+    top: 55%;
+
+    width: 120px;
+    height: 120px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 25;
+
+    animation:
+        planetaFlota 4s ease-in-out infinite;
+
+}
+
+
+/* Planeta */
+
+.planeta-icono {
+
+    font-size: 75px;
+
+    filter:
+        drop-shadow(0 0 10px #ffd21c)
+        drop-shadow(0 0 30px #ff9800);
+
+    transition: .5s;
+
+}
+
+
+/* Anillo */
+
+.planeta-anillo {
+
+    position: absolute;
+
+    width: 125px;
+    height: 35px;
+
+    border: 2px solid #ffd21c;
+
+    border-radius: 50%;
+
+    transform:
+        rotate(-20deg);
+
+    box-shadow:
+        0 0 10px #ffd21c,
+        0 0 25px #ff9800;
+
+}
+
+
+/* Nombre */
+
+.planeta-nombre {
+
+    position: absolute;
+
+    top: 105px;
+
+    width: 150px;
+
+    text-align: center;
+
+    color: #ffd21c;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 8px #ffd21c;
+
+}
+
+
+.planeta-chee:hover
+.planeta-icono {
+
+    transform: scale(1.25);
+
+}
+
+
+@keyframes planetaFlota {
+
+    0%, 100% {
+
+        transform:
+            translateY(0)
+            rotate(-3deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-15px)
+            rotate(3deg);
+
+    }
+
+}
+
+
+/* =========================
+   VENTANA DEL PLANETA
+========================= */
+
+#ventana-planeta {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(0,0,0,.85);
+
+    backdrop-filter: blur(8px);
+
+    z-index: 600;
+
+}
+
+
+.planeta-ventana {
+
+    position: relative;
+
+    width: 90%;
+
+    max-width: 500px;
+
+    min-height: 500px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #302600,
+            #080808 70%
+        );
+
+    border: 1px solid #ffd21c;
+
+    box-shadow:
+        0 0 30px #ffd21c,
+        0 0 100px rgba(255,174,0,.4);
+
+    animation:
+        planetaAparecer .6s ease;
+
+}
+
+
+@keyframes planetaAparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(.3)
+            rotate(-10deg);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0);
+
+    }
+
+}
+
+
+.planeta-ventana h2 {
+
+    color: #ffd21c;
+
+    margin-bottom: 5px;
+
+}
+
+
+.subtitulo-planeta {
+
+    color: #aaa;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================
+   GUSTOS
+========================= */
+
+.gustos-planeta {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.gusto-planeta {
+
+    padding: 15px 5px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,193,7,.06);
+
+    border: 1px solid
+        rgba(255,193,7,.25);
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.gusto-planeta:hover {
+
+    transform:
+        translateY(-8px)
+        scale(1.05);
+
+    background:
+        rgba(255,193,7,.15);
+
+    box-shadow:
+        0 0 20px
+        rgba(255,193,7,.4);
+
+}
+
+
+.gusto-icono {
+
+    font-size: 40px;
+
+}
+
+
+.gusto-nombre {
+
+    margin-top: 7px;
+
+    color: white;
+
+    font-size: 12px;
+
+}
+
+
+/* Botón cerrar */
+
+.cerrar-planeta {
+
+    margin-top: 25px;
+
+}
+/* =========================
+   MINI MUNDOS DE CHEE
+========================= */
+
+#mini-mundo {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(0,0,0,.88);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 2000;
+
+}
+
+
+.mini-mundo-contenido {
+
+    width: 85%;
+
+    max-width: 420px;
+
+    min-height: 350px;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #352b00,
+            #080808 75%
+        );
+
+    border: 1px solid #ffd21c;
+
+    box-shadow:
+        0 0 30px #ffd21c,
+        0 0 100px rgba(255,180,0,.3);
+
+    animation:
+        miniMundoAparecer .5s ease;
+
+}
+
+
+@keyframes miniMundoAparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(.3)
+            rotate(-8deg);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0);
+
+    }
+
+}
+
+
+#mini-icono {
+
+    font-size: 75px;
+
+    margin-bottom: 10px;
+
+    filter:
+        drop-shadow(0 0 15px #ffd21c);
+
+}
+
+
+#mini-titulo {
+
+    color: #ffd21c;
+
+    margin-bottom: 15px;
+
+}
+
+
+#mini-texto {
+
+    color: white;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+}
+
+
+#mini-decoracion {
+
+    font-size: 30px;
+
+    margin: 20px 0;
+
+    letter-spacing: 10px;
+
+}
+
+
+#mini-mundo button {
+
+    padding: 10px 18px;
+
+    border-radius: 20px;
+
+    border: 1px solid #ffd21c;
+
+    background: transparent;
+
+    color: #ffd21c;
+
+    cursor: pointer;
+
+}
+/* =================================
+   AJUSTES PARA CELULAR
+================================= */
+
+@media (max-width: 600px) {
+
+    /* Evita que aparezca desplazamiento horizontal */
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* Universo principal */
+    .universo {
+        width: 100vw;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+
+
+    /* Estrellas normales */
+    .estrella-fondo {
+        transform: scale(.75);
+    }
+
+
+    /* =========================
+       PLANETA CHEE
+    ========================= */
+
+    .planeta-chee {
+
+        right: 8%;
+
+        top: 55%;
+
+        transform: scale(.75);
+
+    }
+
+
+    .planeta-chee:hover
+    .planeta-icono {
+
+        transform: scale(1);
+
+    }
+
+
+    /* =========================
+       MENSAJES SECRETOS
+    ========================= */
+
+    .mensaje-secreto {
+
+        width: 48px;
+        height: 48px;
+
+        font-size: 32px;
+
+    }
+
+
+    /* =========================
+       VENTANA DEL PLANETA
+    ========================= */
+
+    #ventana-planeta {
+
+        padding: 15px;
+
+    }
+
+
+    .planeta-ventana {
+
+        width: 90%;
+
+        max-height: 85vh;
+
+        overflow-y: auto;
+
+        padding: 25px 15px;
+
+        border-radius: 25px;
+
+    }
+
+
+    .planeta-ventana h2 {
+
+        font-size: 20px;
+
+    }
+
+
+    .subtitulo-planeta {
+
+        font-size: 13px;
+
+    }
+
+
+    /* Gustos */
+
+    .gustos-planeta {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+
+    }
+
+
+    .gusto-planeta {
+
+        padding: 12px 5px;
+
+    }
+
+
+    .gusto-icono {
+
+        font-size: 32px;
+
+    }
+
+
+    .gusto-nombre {
+
+        font-size: 11px;
+
+    }
+
+
+    /* =========================
+       MINI MUNDOS
+    ========================= */
+
+    #mini-mundo {
+
+        padding: 15px;
+
+    }
+
+
+    .mini-mundo-contenido {
+
+        width: 88%;
+
+        min-height: auto;
+
+        max-height: 80vh;
+
+        overflow-y: auto;
+
+        padding: 25px 18px;
+
+    }
+
+
+    #mini-icono {
+
+        font-size: 55px;
+
+    }
+
+
+    #mini-titulo {
+
+        font-size: 20px;
+
+    }
+
+
+    #mini-texto {
+
+        font-size: 15px;
+
+        line-height: 1.5;
+
+    }
+
+
+    /* =========================
+       LLUVIA DE FLORES
+    ========================= */
+
+    .petalo {
+
+        font-size: 20px;
+
+    }
+
+
+    /* =========================
+       BOTONES
+    ========================= */
+
+    button {
+
+        min-height: 42px;
+
+        padding: 9px 15px;
+
+        font-size: 14px;
+
+    }
+
+}

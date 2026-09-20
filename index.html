@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para Chee 🌻</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <div id="estrellas"></div>
+    <div id="universo-profundo"></div>
+    <div id="mensajes-secretos"></div>
+
+    <main class="universo" id="universo">
+        <!-- =========================
+     PLANETA DE CHEE
+========================= -->
+
+<div class="planeta-chee" onclick="abrirPlaneta()">
+
+    <div class="planeta-anillo"></div>
+
+    <div class="planeta-icono">
+        🪐
+    </div>
+
+    <div class="planeta-nombre">
+        PLANETA CHEE
+    </div>
+
+</div>
+
+        <!-- Título -->
+        <div class="titulo">
+            <span>UN PEQUEÑO UNIVERSO</span>
+            <h1>para Chee 🌻</h1>
+        </div>
+
+        <!-- Frases -->
+        <div class="frases">
+
+            <div class="frase frase1">
+                Contigo las pláticas nunca se acaban 💬
+            </div>
+
+            <div class="frase frase2">
+                Mi mejor amiga 🌻
+            </div>
+
+            <div class="frase frase3">
+                Gracias por tantas conversaciones ✨
+            </div>
+
+            <div class="frase frase4">
+                De todo podemos hablar JAJA
+            </div>
+
+            <div class="frase frase5">
+                Estrella ⭐
+            </div>
+
+        </div>
+
+
+        <!-- ÓRBITA -->
+
+        <div class="orbita orbita1">
+
+            <div class="objeto">
+                🌻
+            </div>
+
+        </div>
+
+        <div class="orbita orbita2">
+
+            <div class="objeto">
+                🌻
+            </div>
+
+        </div>
+
+        <div class="orbita orbita3">
+
+            <div class="objeto">
+                🌻
+            </div>
+
+        </div>
+
+
+        <!-- GUSTOS -->
+
+        <div class="gusto gusto1">
+            🍑<span>Durazno</span>
+        </div>
+
+        <div class="gusto gusto2">
+            🥥<span>Coco</span>
+        </div>
+
+        <div class="gusto gusto3">
+            🌶️<span>Dinamitas</span>
+        </div>
+
+        <div class="gusto gusto4">
+            🥕<span>Zanahoria</span>
+        </div>
+
+        <div class="gusto gusto5">
+            🥦<span>Brócoli</span>
+        </div>
+
+
+        <!-- CENTRO -->
+
+        <section class="centro">
+
+            <div class="flor-central">
+                🌻
+            </div>
+
+            <h2>Chee</h2>
+
+            <p>
+                También conocida como...
+            </p>
+
+            <div class="estrella-nombre">
+                ⭐ ESTRELLA ⭐
+            </div>
+
+            <button onclick="abrirSorpresa()">
+                🌻 Descubrir sorpresa
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- SORPRESA -->
+
+    <div id="sorpresa">
+
+        <div class="carta">
+
+            <button class="cerrar" onclick="cerrarSorpresa()">
+                ×
+            </button>
+
+            <div class="flor-final">
+                🌻
+            </div>
+
+            <h2>Para Chee ✨</h2>
+
+            <p>
+                Este pequeño universo es para
+                recordar todas esas pláticas,
+                ocurrencias y momentos que
+                compartimos.
+            </p>
+
+            <p>
+                Porque podemos hablar todo el día
+                y aun así siempre aparece otro tema
+                JAJA.
+            </p>
+
+            <div class="gustos-finales">
+
+                🍑 🥥 🌶️ 🥕 🥦
+
+            </div>
+
+            <p class="amistad">
+                Gracias por ser mi mejor amiga. 💛
+            </p>
+
+            <button onclick="lluviaFlores()">
+                🌻 Una última sorpresa
+            </button>
+
+        </div>
+
+    </div>
+<!-- VENTANA DEL PLANETA -->
+
+<div id="ventana-planeta">
+
+    <div class="planeta-ventana">
+
+        <h2>🪐 PLANETA CHEE 🪐</h2>
+
+        <p class="subtitulo-planeta">
+            Un pequeño lugar dedicado a sus gustos 🌻
+        </p>
+
+        <div class="gustos-planeta">
+
+            <div class="gusto-planeta"
+            onclick="mostrarGusto('durazno')">
+                
+                <div class="gusto-icono">🍑</div>
+                <div class="gusto-nombre">
+                    Jugo de durazno
+                </div>
+            </div>
+
+            <div class="gusto-planeta"
+            onclick="mostrarGusto('coco')">
+                <div class="gusto-icono">🥥</div>
+                <div class="gusto-nombre">
+                    Coco
+                </div>
+            </div>
+
+            <div class="gusto-planeta"
+            onclick="mostrarGusto('dinamitas')">
+                <div class="gusto-icono">🌶️</div>
+                <div class="gusto-nombre">
+                    Dinamitas
+                </div>
+            </div>
+
+            <div class="gusto-planeta"
+            onclick="mostrarGusto('zanahoria')">
+                <div class="gusto-icono">🥕</div>
+                <div class="gusto-nombre">
+                    Zanahoria
+                </div>
+            </div>
+
+            <div class="gusto-planeta"
+            onclick="mostrarGusto('brocoli')">
+                <div class="gusto-icono">🥦</div>
+                <div class="gusto-nombre">
+                    Brócoli
+                </div>
+            </div>
+             <div class="gusto-planeta"
+            onclick="mostrarGusto('frase')">
+                <div class="gusto-icono">?</div>
+                <div class="gusto-nombre">
+                    Frase de Estrella
+                </div>
+            </div>
+
+        </div>
+
+        <button
+            class="cerrar-planeta"
+            onclick="cerrarPlaneta()">
+
+            🌌 Seguir explorando
+
+        </button>
+
+    </div>
+
+</div>
+<!-- =========================
+     MINI MUNDO
+========================= -->
+
+<div id="mini-mundo">
+
+    <div class="mini-mundo-contenido">
+
+        <div id="mini-icono"></div>
+
+        <h2 id="mini-titulo"></h2>
+
+        <p id="mini-texto"></p>
+
+        <div id="mini-decoracion"></div>
+
+        <button onclick="cerrarGusto()">
+            🪐 Volver al planeta
+        </button>
+
+    </div>
+
+</div>
+
+    <script src="java.js"></script>
+
+</body>
+
+</html>
